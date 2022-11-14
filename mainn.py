@@ -13,6 +13,7 @@ ACTIVATION_COMMAND = "hey ambrose"
 def get_audio():
     with sr.Microphone() as source:
         print("Say something")
+        r.adjust_for_ambient_noise(source, duration=0.2)
         audio = r.listen(source)
     return audio
 
