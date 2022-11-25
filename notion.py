@@ -10,7 +10,7 @@ class NotionClient:
         self.headers = {
             "Authorization": "Bearer " + token,
             "Content-Type": "application/json",
-            "Notion-Version": "2022-11-25"
+            "Notion-Version": "2021-08-16"
         }
 
 
