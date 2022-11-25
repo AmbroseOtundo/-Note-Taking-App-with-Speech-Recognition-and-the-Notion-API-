@@ -62,5 +62,6 @@ if __name__ == "__main__":
                 res = client.create_page(note, now, status="Active")
                 if res.status_code == 200:
                     play_sound("Stored new item")
-
+                else:
+                    play_sound("Something went wrong")
                 
