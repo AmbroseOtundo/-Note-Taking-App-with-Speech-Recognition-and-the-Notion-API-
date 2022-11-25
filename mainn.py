@@ -9,6 +9,8 @@ r = sr.Recognizer()
 notion_token = "secret_Dc3JH1XmlbTMlNF7KHqGCJkjX8WTZV9reBHgQIyT3GY"
 database_id = "bdeb7b15d89247ebaaebe76126633b84"
 
+client = NotionClient(notion_token, database_id)
+
 ACTIVATION_COMMAND = "hey ambrose"
 
 def get_audio():
@@ -55,5 +57,10 @@ if __name__ == "__main__":
 
             if note:
                 play_sound(note)
+
+                now = datetime.now().astimezone().isoformat()
+                res = client.create_page(note, now, status="Active")
+                if res.status_code == 200:
+                    play_sound("Stored new item")
 
                 

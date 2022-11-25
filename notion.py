@@ -13,8 +13,15 @@ class NotionClient:
             "Notion-Version": "2021-08-16"
         }
 
-    # read, update
+
     def create_page(self, description, date, status):
+        """
+        It creates a page in Notion.
+        
+        :param description: The title of the page
+        :param date: "2020-01-01"
+        :param status: "In Progress"
+        """
         create_url = 'https://api.notion.com/v1/pages'
 
         data = {
@@ -46,6 +53,7 @@ class NotionClient:
             }
         }}
 
+        # Creating a page in Notion.
         data = json.dumps(data)
         res = requests.post(create_url, headers=self.headers, data=data)
         print(res.status_code)
