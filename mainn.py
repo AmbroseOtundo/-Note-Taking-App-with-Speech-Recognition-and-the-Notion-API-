@@ -3,10 +3,11 @@ import gtts
 from playsound import playsound
 import os
 from datetime import datetime
-# from notion import NotionClient
+from notion import NotionClient
 
 r = sr.Recognizer()
-
+notion_token = "secret_Dc3JH1XmlbTMlNF7KHqGCJkjX8WTZV9reBHgQIyT3GY"
+database_id = "bdeb7b15d89247ebaaebe76126633b84"
 
 ACTIVATION_COMMAND = "hey ambrose"
 
